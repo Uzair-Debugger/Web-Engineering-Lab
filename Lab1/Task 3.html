@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HTML5 Elements Demo</title>
+</head>
+<body>
+
+HTML 5 color Element
+<form>
+    Select your favorite color:
+    <input type="color" name="favcolor">
+    <br><br>
+    <input type="submit" value="Submit">
+</form>
+
+<br>
+HTML 5 input restriction as number
+<form>
+    Quantity (between 1 and 5):
+    <input type="number" min="1" max="5" value="5">
+    <input type="submit" value="Send">
+</form>
+
+<br>
+HTML 5 data Encryption
+<form>
+    Username:
+    <input type="text" value="admin">
+    Encryption:
+    <select>
+        <option>1024</option>
+        <option selected>2048 (High Grade)</option>
+        <option>4096</option>
+    </select>
+    <input type="submit" value="Submit">
+</form>
+
+
+<br>
+HTML 5 date picker
+<form>
+    Birthday:
+    <input type="date">
+    <input type="submit" value="Send">
+</form>
+
+
+
+<p>HTML 5 Audio Element</p>
+<audio controls>
+    <source src="audio.mp3" type="audio/mpeg">
+    Your browser does not support audio.
+</audio>
+
+
+
+<p>HTML 5 CANVAS (graphics and text)</p>
+<canvas id="myCanvas" width="300" height="150" style="border:1px solid black;"></canvas>
+
+<script>
+    var c = document.getElementById("myCanvas");
+    var ctx = c.getContext("2d");
+    ctx.font = "30px Arial";
+    ctx.fillText("Hello World", 20, 80);
+</script>
+
+</body>
+</html>
