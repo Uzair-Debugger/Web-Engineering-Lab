@@ -1,0 +1,175 @@
+*{
+    font-family: Arial, Helvetica, sans-serif;
+    /* box-sizing: border-box; */
+   
+}
+
+/* ========================================================= */
+.container{
+    width: 80%;
+    margin: auto;
+}
+.header{
+    height: 60px;
+    border: 3px solid black;
+    margin-bottom: 10px;
+}
+.main{
+    border: 3px solid black;
+    /* height: 400px; */
+    display: flex;
+    /* padding: 10px; */
+}
+.sidebar{
+    width: 25%;
+    border-right: 3px solid black;
+    margin-right: 10px;
+    /* height: 350px; */
+}
+.content{
+    width: 75%;
+    margin: 10px;
+}
+.top_content{
+    height: 60px;
+    border: 3px solid black;
+    margin-bottom: 10px;
+}
+.bottom_content{ 
+    /* height: 350px; */
+    /* border: 3px solid red; */
+    display: flex;
+}
+.box{
+    width: 50%;
+    border: 3px solid black;
+    height: 260px;
+    margin-right: 10px;
+}
+/* #box1{
+    margin-right: 5px;
+} */
+.box:last-child{
+    margin-right: 0;
+}
+.footer{
+    height: 40px;
+    border: 3px solid black;
+    margin-top: 10px;
+}
+
+/*  */
+
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    margin:0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+nav{
+    position:fixed;     
+    top:0;
+    width:100%;
+    background:black;
+}
+
+nav ul{
+    list-style:none;
+    margin:0;
+    padding:0;
+    display:flex;
+    justify-content:space-around      ;
+}
+
+nav ul li{
+    padding:15px 35px;
+}
+
+nav ul li a{
+    color:white;
+    text-decoration:none;
+}
+
+nav ul li:hover{
+    background:#435a5a;
+}
+section{
+    height:500px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:50px;
+    font-weight:bold;
+}
+
+#home{ 
+    background:#18d1cf; 
+}
+#services{ 
+    background:#f39c12;
+ }
+#portfolio{ 
+    background:#9b59b6; 
+}
+#about{ 
+    background:#2ecc71;
+ }
+#contact{
+     background:#e74c3c;
+     }
+
+html{
+      scroll-behavior: smooth;
+}
+/* =========================================================================== */
+li{
+    list-style: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+.menu{
+    background-color: black;
+    color: white;
+    margin: 0 0 5px 0;
+}
+.menu>ul{
+    display: flex;   
+    
+}
+.menu2{
+    background-color: red;
+}
+.menu2>ul>li:hover{
+    font-size: large;
+}
+
+.menu3>ul>li{
+    border-right: 1px solid cyan;
+}
+.menu3>ul>li:hover{
+    background-color: rgb(71, 70, 70);
+}
+
+.menu4>ul>li:active{
+    background-color:darkseagreen;
+    
+}
+.menu5{
+    background-color: gray;
+   
+}
+@media screen and (max-width: 600px) {
+    .menu5>ul{
+        flex-direction: column;
+        
+    }
+    .menu5>ul>li{
+        text-align: center;
+    }
+}
+.menu5>ul>li:active{
+    background-color: darkseagreen;
+}
