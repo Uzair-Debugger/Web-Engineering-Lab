@@ -1,0 +1,87 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>JavaScript objects</title>
+    <script src="script.js"></script>
+</head>
+
+<body>
+    <script>
+        // 1st step: Concept of object in JS is having key/property and its associated value
+        var obj = {
+                    firstName:"afaq",
+                    lastName:"alam",
+                    age:20                    
+        };
+        // to access the object property as obj.property or obj["property"]
+        document.write("First Name is: " + obj.firstName + "<br>");
+        document.write("Last Name is: " + obj.lastName + "<br>");
+        document.write("Age is: " + obj.age + "<br><br>");
+        
+        // 2nd Step: Having index array inside the object
+        var obj_one = {
+                        firstName:"afaq",
+                        lastName:"alam",
+                        age:"20",
+                        
+                        address:["Mardan","kpk"] // an array inside an object
+        };
+        document.write("First Name is: " + obj_one.firstName + "<br>");
+        document.write("Last Name is: " + obj_one.lastName + "<br>");
+        document.write("Age is: " + obj_one.age + "<br>");
+        document.write("Address is: " + obj_one.address + "<br>");
+        document.write("Address is: " + obj_one.address[1] + "<br><br>"); // index[1] only
+        
+        // 3rd Step: Having another object inside an object
+        var obj_two = {
+                        firstName:"afaq",
+                        lastName:"alam",
+                        age:"20",
+                        
+                        address:["Mardan","kpk"], // an array inside an object
+                        skills:{extraDuty:"CR",      // skills object inside obj_two
+                                designation:"Student",
+                                interest:"Web Engineering"
+                               }
+        };
+        document.write("First Name is: " + obj_two.firstName + "<br>");
+        document.write("Last Name is: " + obj_two.lastName + "<br>");
+        document.write("Age is: " + obj_two.age + "<br>");
+        document.write("Address is: " + obj_two.address + "<br>");
+        document.write("Address is: " + obj_two.address[1] + "<br>"); // index[1] only
+        document.write("Extra Duty:" + obj_two.skills.extraDuty + "<br>");// skills object inside                                                                      // obj_two
+        document.write("Designation: " + obj_two.skills.designation + "<br>");
+        document.write("Interest: " + obj_two.skills.interest + "<br><br>");
+        
+        // 4th step: for-in loop to iterate an object data
+        var obj_three = {
+                            firstName:"afaq",
+                            lastName:"alam",
+                            age:20
+                        };
+        for(var data in obj_three){
+            document.write(obj_three[data]+"<br>");
+        }
+
+        // 5th step: for-in loop for nested objects
+        var obj_four = {
+                            firstName:"Afaq",
+                            lastName:"Alam",
+                            age:20,
+                            skills:{extraDuty:"CR",
+                                    interest:"Web Engineering"}
+        };
+        for(let data in obj_four){
+            if(typeof(obj_four[data]) === "object"){
+                for(let nestedProperty in obj_four[data]){
+                    document.write(obj_four[data][nestedProperty] + "<br />");
+                }
+            }else{
+                document.write(obj_four[data] + "<br />");
+            }
+        }
+        
+    </script>
+</body>
+</html>

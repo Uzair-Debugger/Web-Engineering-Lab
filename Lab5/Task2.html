@@ -1,0 +1,49 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Addition using Event Handling</title>
+
+<style>
+  input{
+    margin: 3px;
+  }
+</style>
+
+</head>
+<body>
+<h3>Add Two Numbers</h3>
+
+<div>
+  <label>Enter First Number</label>
+  <input type="text" id="num1">
+</div>
+
+<div>
+  <label>Enter Second Number</label>
+  <input type="text" id="num2">
+</div>
+
+<div>
+  <label>Result</label>
+  <input type="text" id="result" readonly>
+</div>
+
+<script>
+const num1 = document.getElementById("num1");
+const num2 = document.getElementById("num2");
+const result = document.getElementById("result");
+
+function calculate() {
+  const value1 = parseInt(num1.value);
+  const value2 = parseInt(num2.value);
+  result.value = value1 + value2;
+}
+
+num1.addEventListener("input", calculate);
+num2.addEventListener("input", calculate);
+</script>
+
+</body>
+</html>

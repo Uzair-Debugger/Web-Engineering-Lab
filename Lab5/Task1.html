@@ -1,0 +1,62 @@
+<!-- Prepared By:       Syed Muhammad Uzair -->
+<!-- Registration No:   23MDSWE255 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Object Key Value Display</title>
+  <style>
+    table {
+      border: 1px solid black;
+      margin-top: 20px;
+      border-spacing: 2px;
+    }
+
+    th,
+    td {
+
+      border: 1px solid black;
+      padding: 6px 12px;
+      text-align: left;
+    }
+  </style>
+</head>
+
+<body>
+  <table>
+    <thead>
+      <tr>
+        <th>Key</th>
+        <th>Value</th>
+      </tr>
+    </thead>
+    <tbody id="tableBody"></tbody>
+  </table>
+
+  <script>
+    const person = {
+      firstName: "Uzair",
+      lastName: "Ali",
+      age: 20
+    };
+
+    const tableBody = document.getElementById("tableBody");
+
+    Object.entries(person).forEach(([key, value]) => {
+      const row = document.createElement("tr");
+      const keyCell = document.createElement("td");
+      const valueCell = document.createElement("td");
+
+      keyCell.textContent = key;
+      valueCell.textContent = value;
+
+      row.appendChild(keyCell);
+      row.appendChild(valueCell);
+      tableBody.appendChild(row);
+    });
+  </script>
+
+</body>
+
+</html>

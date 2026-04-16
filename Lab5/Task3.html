@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Dropdown Replace</title>
+
+<style>
+body{
+  font-family: Arial;
+  margin: 40px;
+}
+.container{
+  padding: 15px;
+  display: inline-block;
+}
+select,input,button{
+  padding:5px;
+  margin-right:10px;
+}
+</style>
+</head>
+
+<body>
+<div class="container">
+  
+  <span id="inputArea">
+    <select id="dropdown">
+      <option value="First">First</option>
+      <option value="Second">Second</option>
+      <option value="Third">Third</option>
+    </select>
+  </span>
+
+  <button id="newEntryBtn">New Entry</button>
+
+</div>
+
+<script>
+
+const button = document.getElementById("newEntryBtn");
+const container = document.getElementById("inputArea");
+
+let dropdown = document.getElementById("dropdown");
+let inputVisible = false;
+
+button.addEventListener("click", function(){
+
+  if(!inputVisible){
+
+    const textbox = document.createElement("input");
+    textbox.type = "text";
+    textbox.placeholder = "Enter new value";
+    textbox.id = "newValue";
+
+    dropdown.replaceWith(textbox);
+
+    button.textContent = "New Entry";
+    inputVisible = true;
+
+  } 
+  else {
+
+    const textbox = document.getElementById("newValue");
+    const value = textbox.value.trim();
+
+    if(value !== ""){
+
+      const option = document.createElement("option");
+      option.text = value;
+      option.value = value;
+
+      dropdown.appendChild(option);
+      dropdown.value = value;
+
+    }
+
+    textbox.replaceWith(dropdown);
+
+    button.textContent = "New Entry";
+    inputVisible = false;
+
+  }
+
+});
+
+</script>
+
+</body>
+</html>

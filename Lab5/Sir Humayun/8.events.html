@@ -1,0 +1,91 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Events in JS</title>
+    <script src="script.js"></script>
+</head>
+
+<body>
+    <p>Event is reaction to an action. It can be clicking on a button, paragraph, entering text into the textbox. 
+        The following are the common events used in JS</p>
+    
+    <ul>
+        <li>onclick</li>
+        <li>ondblclick</li>
+        <li>contextmenu</li>
+        <li>onkeypress</li>
+        <li>onkeyup</li>
+        <li>onkeydown</li>
+        <li>onmouseover</li>
+        <li>onmouseout</li>
+        <li>onmousedown</li>
+        <li>onmouseup</li>
+        <li>onmousemove</li>
+        <li>onresize</li>
+        <li>onchange (HTML element has been changed)</li>
+        
+    </ul>
+    
+    <!--Click Events-->
+    <!--	Single, and double click events -->
+    <h1>Click Events</h1>
+    <h3 id="heading">Introduction to JavaScript Events</h3>
+	<form>
+		<input type="button" value="Click Me" onClick="events();">		
+		<input type="button" value="Double Click" onDblClick="events_Dbl();" title="Heading text changed.">		
+		<input type="button" value="Double Click" onDblClick="events_Dbl_Two();" title="Change Color on Double Click">		
+		
+		&emsp;&emsp;  <!-- two space character = 2 + 2 = 4 -->
+		Text Box Testing Click Event &emsp;<input type="text" placeholder="Click here" onClick="txtbox_Testing();">
+	</form>
+    <p oncontextmenu="rightclickevent();">I will demonstrate the right click event</p>
+    <!-- click event upon paragraph	-->
+	<p id="clickTesting" onClick="para_Testing_Clk();">I am paragraph and user wants to test single click upon me. Let's try!</p>
+    
+    <!--Keyboard events-->
+    <h1>Keyboard events</h1>
+    <h4>
+        The <b>keypress</b> event captures the printable keys such as letters, symbols and enter key.
+        The key will be captured when it has been pressed and not released yet. 
+    </h4>
+    <h4>The <b>keydown</b> event captures the printable and non-printable keys such as letters, symbols, 
+        modifier keys (Shift, Ctrl) etc. and captured when the keys has been pressed.</h4>
+    
+    <h4>Better to use onkeypress where only text fields, form editors etc. data required and use onkeydown when need all character
+        such as in the game controls, shortcuts etc. 
+    </h4>
+    <form>
+       On Key Down Event <input type="text" name="keydowntextbox" onKeyDown="keyDown(event);">
+       On Key Up Event <input type="text" name="keyuptextbox" onKeyUp="keyUp();">
+       On Key Press Event <input type="text" name="keypresstextbox" onKeyPress="keyPress(event);">
+    </form>
+    
+    <!-- Mouse Events -->
+    <p onMouseOver="mouseOverEvent();">I will demonstrate the on mouse over event</p>
+    <p onMouseOut="mouseOutEvent();">I will demonstrate the on mouse out event</p>
+    <p onMouseDown="mouseDownEvent();">I will demonstrate the on mouse down event</p>
+    <p onMouseUp="mouseUpEvent();">I will demonstrate the on mouse up event</p>
+    <div onMouseMove="moveMouse();"> 
+		<p>Mouse Move here</p>
+		<span id="mouseMoveDiv"></span>
+	</div>
+
+    <form name="myform">	
+		Blur Event &emsp; <input type="text" id="blurEvent" onBlur="blur_Event();">
+		<br /><br />
+		Focus Event &emsp; <input type="text" id="focusEvent" onFocus="focus_Event();">
+		<br /><br />
+		On Change Event &emsp; <input type="text" id="onchangeEvent" onChange="onChangeEvent();">
+		<br /><br />		
+		On Change Event for Drop Down &emsp; <select id="dropdown" onChange="dropDownChangeEvent();">
+			<option>item 1</option>
+			<option>item 2</option>
+			<option>item 3</option>
+		</select>		
+		<div>
+			<p id="dropDownPara">I will change color and font size when you made changes in the above drop down list.</p>
+		</div>		
+	</form>
+</body>
+</html>

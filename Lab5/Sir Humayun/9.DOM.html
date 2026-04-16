@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Document Object Model</title>
+     <script src="script.js"></script>
+    <!-- Referencing External Css file -->
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    
+    <!--Double Click button changed paragraph text-->
+        <input type="button" onDblClick="dblevent();" value="Double Click Me">
+        <p id="dblvictim">Double click on the button changed me!</p>
+    
+    <!-- Single click changed color of the paragraph -->
+        <input type="button" onClick="singleclickevent();" value="Click Me">
+        <p id="clickvictim">Click on the button will change my color</p>
+    
+    <!-- Clicking on the textbox will effect the size of the paragraph -->
+    Text Box Testing Click Event &emsp;<input type="text" placeholder="Click here" onClick="txtbox_Testing();">
+    <h3 id="heading">Introduction to JavaScript Events</h3>
+</body>
+</html>

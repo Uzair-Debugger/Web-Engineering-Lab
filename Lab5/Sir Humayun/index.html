@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let obj = {
+            firstName: 'Uzair',
+            lastName: 'Hamid',
+            age: 20,
+            address: ['Mardan', 'KPK'],
+
+            skills: {
+                frontend: 'HTML, CSS, JS',
+                backend: 'php'
+            }
+        }
+
+        document.write(`First Name is: ${obj.firstName} <br>`)
+        document.write(`Last Name is: ${obj.lastName} <br>`)
+        document.write(`Age is: ${obj.age} <br>`)
+        document.write(`Address is: ${obj.address[1]} <br> <br>`)
+
+        document.write(`Skills are: <br> Frontend: ${obj.skills.frontend} <br> Backend: ${obj.skills.backend}`)
+        document.write(`<br>==================================================================`)
+        document.write(`<br><br> Use loop instead <br>`)
+        /*
+                let obj2 = {
+                    firstName: 'Uzair',
+                    lastName: 'Hamid',
+                    age: 20,
+                }
+                for (let x in obj2) {
+                    document.write(`${obj2[x]} <br>`)
+                }
+                    */
+        for(let data in obj){
+            if(typeof(obj[data])==='object'){
+                for(let subdata in obj[data]){
+                    document.write(`${obj[data][subdata]}<br>`)
+                }
+            }
+            else{
+                document.write(`${obj[data]}<br>`)
+            }
+        }
+    </script>
+</body>
+
+</html>

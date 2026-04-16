@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 7 </title>
+</head>
+<body>
+    <script>
+
+    function getData() {
+        return new Promise(function(resolve, reject) {
+
+            let success = true
+
+            setTimeout(function() {
+
+                if(success) {
+                    resolve("Data loaded successfully")
+                } else {
+                    reject("Error loading data")
+                }
+
+            }, 2000)
+
+        })
+    }
+
+    async function loadData() {
+
+        try {
+            let result = await getData()
+            console.log(result)
+        } catch(error) {
+            console.log(error)
+        }
+
+    }
+
+    loadData()
+
+</script>
+</body>
+</html>

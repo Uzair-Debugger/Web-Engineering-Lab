@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Constructor in JS</title>
+</head>
+
+<body>
+    <script>
+        // to avoid the following code rewriting, use constructor and create object only
+        /*
+        var obj = {
+                    sr_no:1,
+                    age:20            
+        };
+        var obj_two = {
+                    sr_no:2,
+                    age:30
+        };
+    */
+        // Constructor name should start with capital alphabet
+        function Contr(value_one,value_two){
+            this.sr_no = value_one;
+            this.age = value_two;
+        }
+        
+        // creating objects, this way can create plenty of objects only and cannot rewrite obj code
+        var obj = new Contr(1,20);
+        var obj_one = new Contr(2,30);
+        
+        document.write(obj.sr_no + "  " + obj.age + "<br>");
+        document.write(obj_one.sr_no + "  " + obj_one.age + "<br>");
+        
+        
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 5: onSelect event (no styling)</title>
+</head>
+
+<body>
+    <h2>Display of selected Text using onSelect Event</h2>
+
+    <form onsubmit="return false;">
+        <label for="userText">Select Text:</label>
+        <input type="text" id="userText" value="Web Engineering Lab" style="width: 200px;"><br><br>
+
+        <div><strong>Selected text appears here:</strong></div>
+        <div id="selectedDisplay"
+            style="border:1px solid #48ede7; background-color: #48ede7; min-height:1.5em; padding:4px; width:300px; height: 150px;">
+        </div>
+    </form>
+
+    <script>
+        (function () {
+
+            const inputField = document.getElementById('userText');
+            const displayDiv = document.getElementById('selectedDisplay');
+
+            function showSelection() {
+                if (!inputField || !displayDiv) return;
+
+                const start = inputField.selectionStart;
+                const end = inputField.selectionEnd;
+
+                if (inputField.value && start !== null && end !== null && start < end) {
+                    const selectedText = inputField.value.substring(start, end);
+                    displayDiv.textContent = selectedText;
+                } else {
+
+                    displayDiv.textContent = '';
+                }
+            }
+            inputField.addEventListener('select', function () {
+                showSelection();
+            });
+            inputField.addEventListener('mouseup', function () {
+                showSelection();
+            });
+            inputField.addEventListener('keyup', function () {
+                showSelection();
+            });
+            inputField.addEventListener('click', function () {
+
+                showSelection();
+            });
+            inputField.addEventListener('input', function () {
+                displayDiv.textContent = '';
+            });
+            inputField.addEventListener('blur', function () {
+                displayDiv.textContent = '';
+            });
+
+            displayDiv.textContent = '';
+        })();
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // why we need anonymous function
+        // Part 1: when there is a function conflict, we need anonymous function
+        // The following code having error due to same variable names and we need different operations such as * and +
+        /*
+        let x = 5;
+        let y = 5;
+        document.write("The product of the variables: " + x * y + "<br />");
+
+        let x = 5;
+        let y = 5;
+        document.write("The summation of the variables: " + x + y + "<br />");
+        */
+        /* The remedy for the above code can be to create two functions with the same name or different name
+            but it will be wastage of memory and needs to call the function
+        */
+       
+        function abc(){
+            let x = 10;
+            let y = 10;
+            document.write("The product of the variables: " + x * y + "<br />");
+        }
+        abc();
+        function abc(){
+            let x = 10;
+            let y = 20;
+            document.write("The sum of the variables: " + x + y + "<br />");
+            console.log(x * y);
+        }
+        abc();
+        
+
+        // remedy is anonymous function as we do not need any function that should be called
+        
+        (function(){
+            let x = 5;
+            let y = 5;
+            document.write("The product of the variables: " + x * y + "<br />");
+            document.write("The addition of two variables: " + (x + y) + "<br />");
+        }) ();
+        
+        // Part 2: when the function is less used or called but there is a need to create a function as well
+        // we create the anonymous function and assign it to the variable and then can call the variable
+        // another use can be to pass to another function easily
+        
+        var x = function(){
+            let x = 5;
+            let y = 5;
+            document.write("The sum of the variables: ", x + y + "<br />");
+        }
+        x();    // the major part to the anoymous function calling
+        
+    </script>
+</body>
+</html>
