@@ -1,0 +1,16 @@
+.counter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.counter span {
+    font-size: 40px;
+    color: blueviolet;
+    font-weight: bold;
+}
+
+.header {
+    text-align: center;
+}
