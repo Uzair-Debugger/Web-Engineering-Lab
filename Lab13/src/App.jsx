@@ -9,7 +9,6 @@ function App() {
   return (
     <main>
       <h1 className='header'>Web Engineering Lab 13</h1>
-      {/* <Counter /> */}
 
       <button onClick={() => setToggle(!toggle)}>Toggle</button>
 
